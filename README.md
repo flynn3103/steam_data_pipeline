@@ -1,6 +1,5 @@
 # STEAM for Vietnam Foundation Data Pipeline
 
-
 <img src="https://static.ybox.vn/2020/8/5/1597995091967-Thie%CC%82%CC%81t%20ke%CC%82%CC%81%20kho%CC%82ng%20te%CC%82n%20(1).png"/>
 
 ## Assignment:
@@ -22,3 +21,5 @@ above and dump it into one BigQuery table
 5. Write a schedule job to pull data from those 3 tables and push to BigQuery table
 6. Provide instructions on how to run those steps above
 7. Provide us with the github repository url so we can rerun it
+
+## Usage:
