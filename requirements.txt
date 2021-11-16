@@ -1,2 +1,2 @@
-mysql-connector-python
-halo
+psycopg2
+Faker

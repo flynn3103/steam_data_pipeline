@@ -23,3 +23,8 @@ above and dump it into one BigQuery table
 7. Provide us with the github repository url so we can rerun it
 
 ## Usage:
+
+    docker-compose up
+
+The Airflow will run on http://localhost:8080/ <br>
+The pgweb: http://localhost:8080/

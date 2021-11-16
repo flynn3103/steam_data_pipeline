@@ -10,6 +10,19 @@ services:
         volumes:
             - /tmp/postgres-data:/var/lib/postgresql/data
 
+    pgweb:
+        container_name: pgweb
+        restart: always
+        image: sosedoff/pgweb
+        ports: 
+            - "8081:8081" 
+        links: 
+            - postgres:postgres  # my database container is called postgres, not db
+        environment:
+            - DATABASE_URL=postgres://airflow:airflow@postgres:5432/airflow?sslmode=disable
+        depends_on:
+            - postgres
+
     webserver:
         build: .
         restart: always
@@ -44,3 +57,11 @@ services:
             - ./dags:/usr/local/airflow/dags
             - /tmp/airflow_logs:/root/airflow/logs
         command: scheduler
+
+    requirements:
+        image: python:3.7-alpine
+        volumes:
+            - pip37:/usr/local/lib/python3.7/site-packages
+            - .:/project
+        working_dir: /project
+        command: pip install -r requirements.txt
